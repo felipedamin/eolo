@@ -3,15 +3,47 @@ import * as React from 'react';
 import { BoxTurbina } from './../components/boxTurbina'
 
 
-export default class geralTurbinas extends React.Component {
+export default class GeralTurbinas extends React.Component {
   render() {
-    const TURBINAS = ['a','b','c'];
+    const TURBINAS = [
+      {
+        ID: 'a',
+        status: 'Funcionando',
+        infos: {
+          vento: 'velVento',
+          temp: 'temp',
+          kW: 'kW'
+        }
+      },
+      {
+        ID: 'b',
+        status: 'Manutençao',
+        infos: {
+          vento: 'velVento',
+          temp: 'temp',
+          kW: 'kW'
+        }
+      },
+      {
+        ID: 'c',
+        status: 'Desempenho abaixo do esperado',
+        infos: {
+          vento: 'velVento',
+          temp: 'temp',
+          kW: 'kW'
+        }
+      }
+    ]
     return (
       <div>
-        <div>Turbinas</div>
         {
           TURBINAS.map((item, i) => (
-            <BoxTurbina key={i}>Hello, {item}!</BoxTurbina>
+            <BoxTurbina
+              key={i}
+              turbinaID={item.ID}
+              status={item.status}
+              infos={item.infos}
+            >Hello, {item.ID}!</BoxTurbina>
           ))
         }
       </div>

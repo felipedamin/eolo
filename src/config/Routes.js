@@ -6,8 +6,7 @@ import {
   Redirect
 } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
-
-import geralTurbinas from '../modules/engines/views/geralTurbinas';
+import statusParque from '../modules/engines/views/statusParque';
 import { Home } from '../modules/Home';
 import LayoutHeader from '../modules/header'
 import LayoutFooter from '../modules/footer'
@@ -18,6 +17,7 @@ export class Routes extends React.Component {
     return (
       <Router>
         <LayoutHeader />
+
         <Grid
           direction="column"
           justify="space-between"
@@ -26,7 +26,7 @@ export class Routes extends React.Component {
         >
           <Switch>
             <Route path="/home" component={Home} />
-            <Route path="/status" component={geralTurbinas} />
+            <Route path="/status" component={statusParque} />
             <Redirect from="/" to="/home" />
           </Switch>
         </Grid>

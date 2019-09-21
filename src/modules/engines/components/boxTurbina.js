@@ -10,35 +10,37 @@ import Typography from '@material-ui/core/Typography';
 
 
 export class BoxTurbina extends React.Component {
+
   render() {
     return (
       <Card style={{ margin: 20 }}>
         <CardContent>
           <Typography color="textSecondary" gutterBottom>
-            Word of the Day
+            {`Turbina ${this.props.turbinaID}`}
           </Typography>
           <Typography variant="h5" component="h2">
-            benevlent
-          </Typography>
-          <Typography color="textSecondary">
-            adjective
+            {`Status: ${this.props.status}`}
           </Typography>
           <Typography variant="body2" component="p">
-            well meaning and kindly.
-            <br />
-            {'"a benevolent smile"'}
+            {`Detalhes: ${JSON.stringify(this.props.infos)}`}
           </Typography>
         </CardContent>
         <CardActions>
-          <ExpansionPanel>
+          <ExpansionPanel style={
+            {
+              backgroundColor: 'rgba(0, 0, 0, .05)',
+              alignItems: "center",
+              border: '1px solid rgba(0, 0, 0, .125)'
+            }
+          }>
             <ExpansionPanelSummary
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography alignItems="center">Detalhes</Typography>
+              <p>Gŕafico de desempenho</p>
             </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography alignItems="center">
+            <ExpansionPanelDetails style={{ backgroundColor: 'rgba(0, 0, 0, .1)' }}>
+              <Typography>
                 Exibir gráfico aqui Exibir gráfico aqui Exibir gráfico aqui Exibir gráfico aqui Exibir gráfico aqui Exibir gráfico aqui  Exibir gráfico aqui
                 Exibir gráfico aqui Exibir gráfico aquiExibir gráfico aqui Exibir gráfico aqui Exibir gráfico aqui Exibir gráfico aqui
                 Exibir gráfico aqui Exibir gráfico aqui Exibir gráfico aquiExibir gráfico aquiExibir gráfico aquiExibir gráfico aquiExibir gráfico aquiExibir gráfico aqui
