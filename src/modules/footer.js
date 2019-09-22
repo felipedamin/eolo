@@ -1,15 +1,25 @@
+/* eslint-disable jsx-a11y/alt-text */
 import * as React from 'react';
 import styled from 'styled-components';
 
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
+import icone from './../images/hackathon-icone-01.svg'
+
 const year = new Date().getFullYear();
 
 const LayoutFooter = () => (
-  <Footer className="container">
-    <Grid container direction="row" justify="space-between" alignItems="center">
-      <Typography align="center">Footer {`${year}`}</Typography>
+  <Footer className="container" style={{backgroundColor: 'rgba(0, 0, 0, 0.05)', color:'#ffffff'}}>
+    <Grid container direction="column" justify="space-between" alignItems="center">
+      <img
+        src={icone}
+        align='center'
+        style={{
+          width: '15em',
+          height: '15em',
+        }}
+      />
     </Grid>
   </Footer>
 );

@@ -10,6 +10,9 @@ import Divider from '@material-ui/core/Divider';
 import { List, ListItem, ListItemText } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 
+import dropEsquerda from './../images/hackathon-drop-esquerda.svg'
+import logo from './../images/hackathon-logo.svg'
+
 class LayoutHeader extends React.Component {
   constructor() {
     super()
@@ -20,7 +23,7 @@ class LayoutHeader extends React.Component {
 
   parquesList = () => (
     <div
-      style={{ width: "250px" }}
+      style={{ width: "250px", backgroundColor: '#ff7b17' }}
       role="presentation"
       onClick={this.toggleDrawer(false)}
       onKeyDown={this.toggleDrawer(false)}
@@ -32,7 +35,6 @@ class LayoutHeader extends React.Component {
           </ListItem>
         ))}
       </List>
-      <Divider />
     </div>
   );
 
@@ -46,28 +48,46 @@ class LayoutHeader extends React.Component {
 
   render() {
     return (
-      <AppBar position="static">
+      <AppBar position="static" style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)', color: '#ffffff' }} >
         <Header className="container">
           <Grid container direction="row" justify="space-between" alignItems="center">
+            <Button onClick={this.toggleDrawer(true)} size="small" style={{ color: '#ffffff', marginLeft: '3em' }}>
+              <img
+                onClick={this.toggleDrawer(true)}
+                src={dropEsquerda}
+                style={{ width: '2.5em', height: '2.5em' }} />
+            </Button>
+            <img
+              src={logo}
+              align="center"
+              style={{ width: '15em', height: '7em' }} />
+            <div style={{ width: '6em' }} />
 
-            <Button onClick={this.toggleDrawer(true)}>Selecione o Parque Eólico</Button>
-            <SwipeableDrawer
-              anchor="left"
-              open={this.state.open}
-              onClose={this.toggleDrawer(false)}
-              onOpen={this.toggleDrawer(true)}
-            >{this.parquesList()}</SwipeableDrawer>
-
-            <NavLink to="/home">
-              <Button size="small" color="inherit">
-                Home </Button>
+          </Grid>
+          <Grid container direction="row" justify="space-around" alignItems="center">
+            <div style={{ width: '0em' }} />
+            <div>|</div>
+            <NavLink to="/home" >
+              <Button size="small" style={{ color: '#ffffff' }}>
+                Geral </Button>
             </NavLink>
+            <div>|</div>
+            <NavLink to="/home" >
+              <Button size="small" style={{ color: '#ffffff' }}>
+                Turbina </Button>
+            </NavLink>
+            <div>|</div>
             <NavLink to="/status">
-              <Button size="small" color="inherit">
-                Turbinas </Button>
+              <Button size="small" style={{ color: '#ffffff' }}>
+                Visão do Parque </Button>
             </NavLink>
-
-            <Typography align="center">LOGO!</Typography>
+            <div>|</div>
+            <NavLink to="/status">
+              <Button size="small" style={{ color: '#ffffff' }}>
+                Contato </Button>
+            </NavLink>
+            <div>|</div>
+            <div style={{ width: '0em' }} />
           </Grid>
         </Header>
       </AppBar>
@@ -79,7 +99,7 @@ const Header = styled.header`
   display: block;
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: #50FF50;
+  background-color:rgba(0, 0, 0, 0.1);
 `;
 
 export default LayoutHeader
