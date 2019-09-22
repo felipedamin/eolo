@@ -3,11 +3,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-
 import icone from './../images/hackathon-icone-01.svg'
-
-const year = new Date().getFullYear();
 
 const LayoutFooter = () => (
   <Footer className="container" style={{backgroundColor: 'rgba(0, 0, 0, 0.05)', color:'#ffffff'}}>

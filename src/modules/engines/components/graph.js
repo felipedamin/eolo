@@ -1,14 +1,16 @@
-/* eslint-disable import/no-webpack-loader-syntax */
 import * as React from 'react';
+// import Plot from 'react-plotly.js';
+import createPlotlyComponent from 'react-plotly.js';
+import Plotly from 'plotly.js/dist/plotly-cartesian';
+
 import Graphs from '../../../graphs'
 
-var __html = require('../../../graphs/TurbinaA16.html');
-var template = { __html };
+const PlotlyComponent = createPlotlyComponent(Plotly);
 
 class Graph extends React.Component {
   render() {
     return (
-      <div dangerouslySetInnerHTML={template} />
+      <PlotlyComponent data={Graphs.TurbinaA16.data} layout={Graphs.TurbinaA16.layout}/>
     );
   }
 }

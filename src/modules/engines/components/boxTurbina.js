@@ -6,8 +6,8 @@ import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails'
 import { ThemeProvider } from './../../../config/themeProvider'
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+
+import Graph from './graph'
 
 export class BoxTurbina extends React.Component {
 
@@ -16,15 +16,15 @@ export class BoxTurbina extends React.Component {
       <ThemeProvider>
         <Card style={{ margin: 20, backgroundColor: 'rgba(0, 0, 0, 0.1)', fontFamily:'Raleway', fontSize:'1.3em'}}>
           <CardContent style={{fontFamily:'Raleway', fontSize:'1.3em'}}>
-            <Typography style={{color:'#ffffff'}} gutterBottom>
-              {`Turbina ${this.props.turbinaID}`}
-            </Typography>
-            <Typography style={{color:'#ffffff'}} variant="h5" component="h2">
+            <p style={{color:'#ffffff', fontSize:'1.3em', margin:'0.2em'}}>
+              {`${this.props.turbinaID}`}
+            </p>
+            <p style={{color:'#ffffff', fontSize:'0.9em', margin:'0.2em'}}>
               {`Status: ${this.props.status}`}
-            </Typography>
-            <Typography style={{color:'#ffffff'}} variant="body2" component="p">
+            </p>
+            <p style={{color:'#ffffff', fontSize:'0.5em', margin:'0.2em'}} >
               {`Detalhes: ${JSON.stringify(this.props.infos)}`}
-            </Typography>
+            </p>
           </CardContent>
           <CardActions>
             <ExpansionPanel style={
@@ -37,12 +37,13 @@ export class BoxTurbina extends React.Component {
               }
             }>
               <ExpansionPanelSummary
-                aria-controls="panel1a-content"
-                id="panel1a-header"
+                margin='0.2em'
               >
-                <p style={{color:'#ffffff'}}>Gŕafico de desempenho</p>
+                <p style={{color:'#ffffff', margin:'0.2em'}}>Gŕafico de desempenho</p>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails style={{ backgroundColor: 'rgba(0, 0, 0, .1)'}}>
+                aa
+                <Graph />
               </ExpansionPanelDetails>
             </ExpansionPanel>
           </CardActions>

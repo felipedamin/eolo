@@ -5,10 +5,9 @@ import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 import AppBar from '@material-ui/core/AppBar';
 import Grid from '@material-ui/core/Grid';
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import Divider from '@material-ui/core/Divider';
-import { List, ListItem, ListItemText } from '@material-ui/core';
-import Typography from '@material-ui/core/Typography';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 
 import dropEsquerda from './../images/hackathon-drop-esquerda.svg'
 import logo from './../images/hackathon-logo.svg'
